@@ -10,18 +10,13 @@ class Solution {
             char c = s.charAt(i);
             if(hm.containsKey(c))
             {
-                if(!stack.empty())
-                {
-                    if(hm.get(c) == stack.peek())
+                    if(!stack.empty() && hm.get(c) == stack.peek() )
                     {
                         if(!stack.empty())
                             stack.pop();
                     }
                     else
                         return false;
-                }
-                else
-                    return false;
             }
             else
                 stack.push(c);
