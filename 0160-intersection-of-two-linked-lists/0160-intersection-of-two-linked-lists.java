@@ -42,8 +42,12 @@ public class Solution {
     }
     public static int size(ListNode head)
     {
-        if(head == null)
-            return 0;
-        return 1+size(head.next);
+        int c = 0;
+        while(head != null)
+        {
+            c++;
+            head = head.next;
+        }
+        return c;
     }
 }
