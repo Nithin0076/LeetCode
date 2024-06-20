@@ -11,6 +11,8 @@
  */
 public class Solution {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        if(headA == null || headB == null)
+            return null;
         int s1 = size(headA), s2 = size(headB);
         int diff = Math.abs(s1-s2);
         if(s1 > s2)
@@ -26,17 +28,14 @@ public class Solution {
                 headB = headB.next;
         }
         
-        while(headA != null)
+        while(headA != null && headB != null)
         {
             if(headA == headB)
             {
                 return headA;
             }
-            else
-            {
                 headA = headA.next;
                 headB = headB.next;
-            }
         }
         return null;
     }
